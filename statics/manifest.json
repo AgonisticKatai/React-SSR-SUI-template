@@ -1,0 +1,7 @@
+{
+  "name": "React server-side-rendering SUI template",
+  "short_name": "React-SSR-SUI-template",
+  "display": "standalone",
+  "start_url": "/",
+  "splash_pages": null
+}
