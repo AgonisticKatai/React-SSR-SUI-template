@@ -1,0 +1,59 @@
+{
+  "name": "react-ssr-sui-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sui-bundler build -C && cp -R ./statics/ ./public/ && cp ./public/index.html ./public/200.html",
+    "co": "sui-mono commit",
+    "lint": "sui-lint js && sui-lint sass",
+    "precommit": "sui-precommit run",
+    "start": "sui-bundler dev",
+    "test": "NODE_ENV=test sui-test b --src-pattern src/domain/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgonisticKatai/React-SSR-SUI-template.git"
+  },
+  "author": "Nacho Torrella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgonisticKatai/React-SSR-SUI-template/issues"
+  },
+  "homepage": "https://github.com/AgonisticKatai/React-SSR-SUI-template#readme",
+  "config": {
+    "validate-commit-msg": {
+      "types": "@s-ui/mono/src/types"
+    }
+  },
+  "sui-bundler": {
+    "env": [
+      "APP_NAME"
+    ],
+    "vendor": [
+      "react",
+      "react-dom",
+      "react-router"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "sasslintConfig": "./node_modules/@s-ui/lint/sass-lint.yml",
+  "dependencies": {
+    "@s-ui/decorators": "1",
+    "@s-ui/domain": "1",
+    "@s-ui/hoc": "1",
+    "@s-ui/i18n": "1",
+    "@s-ui/react-initial-props": "2"
+  },
+  "devDependencies": {
+    "@s-ui/bundler": "4",
+    "@s-ui/lint": "2",
+    "@s-ui/mono": "1",
+    "@s-ui/precommit": "2",
+    "@s-ui/test": "2"
+  }
+}
